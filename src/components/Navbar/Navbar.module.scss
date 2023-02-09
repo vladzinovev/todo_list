@@ -1,0 +1,39 @@
+.navbar {
+  .btn_navbar {
+    width: 350px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    .btn_open {
+      width: 100px;
+    }
+  }
+  .mobile_block {
+    padding: 5px 20px;
+    transform: translateY(-150%);
+    animation: ani 1s forwards;
+    width: 200px;
+    background: red;
+    border-radius: 20px;
+    .settings {
+      .flex {
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        p{
+            margin-top: 3px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes ani {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
