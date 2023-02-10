@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import styles from "./Navbar.module.scss";
 import UiSwitch from "@/ui/UiSwitch/UiSwitch";
+import { Switch } from "@/ui/UiSwitch/Switch";
+import MUISwitch from "@/ui/UiSwitch/MUISwitch";
 
 
 const Navbar=()=> {
@@ -16,7 +18,7 @@ const Navbar=()=> {
   return (
     <div className={styles.navbar} style={{ position: "relative" }}>
       <div className={styles.btn_navbar}>
-        <button className={styles.btn_open}>To Do</button>
+        <button className={styles.btn_open}><p className={styles.text}>To Do</p></button>
         <button className={styles.btn_settings}>
           <Image onClick={handleDrawerToggle} src={settings} alt="Settings" />
         </button>
@@ -35,7 +37,7 @@ const Navbar=()=> {
             </div>
             <div className={styles.flex}>
               <p>Old ToDo</p>
-              <UiSwitch active={false}/>
+              <UiSwitch/>
             </div>
           </div>
         </div>

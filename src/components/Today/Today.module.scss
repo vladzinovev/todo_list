@@ -1,5 +1,17 @@
-.today{
-    .heading{
-        display:flex;
+.today {
+  .heading {
+    display: flex;
+    color: #f4f4f4;
+    margin-top: 19px;
+    margin-left: 17px;
+    .title {
+      font-family: Abhaya Libre SemiBold, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      color: #f4f4f4;
+      margin-left: 10px;
     }
+  }
 }

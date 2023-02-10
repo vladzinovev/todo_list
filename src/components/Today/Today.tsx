@@ -7,6 +7,9 @@ const Today = () => {
             <UiCheck/> 
             <p className={styles.title}>Today Tasks:</p>
         </div>
+        <div className={styles.description}>
+            <div></div>
+        </div>
       </div>
     );
   };

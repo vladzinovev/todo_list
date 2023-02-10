@@ -16,14 +16,14 @@
   background: #10c200;
   padding-left: 23px;
   .circle {
-    padding-right: 3px;
+    padding-right: 4px;
     animation: open 0.5s forwards;
   }
 }
 .not_active {
   background: #366eff;
   .circle {
-    padding-right: 3px;
+    padding-right: 4px;
     animation: close 0.5s forwards;
   }
 }

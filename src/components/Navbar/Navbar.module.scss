@@ -1,25 +1,36 @@
 .navbar {
-    position: relative;
+  position: relative;
   .btn_navbar {
     width: 350px;
-    height: 60px;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+
     .btn_open {
-        color: white;
+      color: white;
       width: 100px;
       cursor: pointer;
-      background:none;
+      background: none;
       border-style: none;
+      margin-left: 17px;
+      .text {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 43px;
+        font-family: Abhaya Libre SemiBold, sans-serif;
+        color: white;
+      }
     }
     .btn_settings {
-        cursor: pointer;
-        background:none;
-        border-style: none;
-      }
+      cursor: pointer;
+      background: none;
+      border-style: none;
+      margin-right: 19.5px;
+      margin-top: 6px;
+    }
   }
   .mobile_block {
+    z-index: 1;
     padding: 5px 20px;
     transform: translateY(150%);
     animation: ani 1s forwards;
@@ -32,8 +43,8 @@
         margin-top: 5px;
         display: flex;
         justify-content: space-between;
-        p{
-            margin-top: 3px;
+        p {
+          margin-top: 3px;
         }
       }
     }

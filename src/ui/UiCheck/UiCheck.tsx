@@ -1,5 +1,5 @@
 import styles from "./UiCheck.module.scss";
-import check from "../../assets/svg/Open.svg";
+import True from "../../assets/svg/True.svg";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ const UiCheck = () => {
   return (
     <div className={styles.check} onClick={(e:any)=>toogle(e)}> 
       <div className={styles.square}>
-        {checked ? <Image className={styles.image} src={check} alt="Check"/> : null}
+        {checked ? <Image className={styles.image} src={True} alt="Check"/> : null}
       </div>
     </div>
   );

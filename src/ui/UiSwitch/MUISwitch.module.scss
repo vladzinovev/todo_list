@@ -1,0 +1,19 @@
+.switch{
+    width: 10px;
+    .MuiSwitch-switchBase{
+        background:green;
+        width: 100px;
+        margin-top: 20px;
+    }
+    .MuiSwitch-root .MuiSwitch-sizeMedium .MUISwitch_switch__WerPs{
+        .MuiButtonBase-root .MuiSwitch-switchBase .MuiSwitch-colorPrimary .Mui-checked PrivateSwitchBase-root .MuiSwitch-switchBase .MuiSwitch-colorPrimary .Mui-checked .Mui-checked {
+            .MuiSwitch-thumb{
+                background:red;
+            }
+        }
+    }
+    .MuiSwitch-root {
+        width: 100px;
+    }
+    
+}
