@@ -12,23 +12,31 @@
       position: absolute;
       width: 5px;
       height: 190px;
-      background: #ff0000;
       border-radius: 3px;
+      background: #FF0000;
+    }
+    .important{
+        background: #FF0000;
+    }
+    .middle{
+        background: #366EFF;
+    }
+    .lite{
+        background: #FFEB33;
     }
     .input {
-        
         font-family: Abhaya Libre SemiBold, sans-serif;
-      margin-left: 20px;
-      padding: 5px;
-      margin-bottom: 10px;
-      width: 300px;
-      height: 40px;
-      background: rgba(207, 203, 203, 0.15);
-      border-radius: 15px;
-      box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
-        -8px -8px 20px rgba(255, 255, 255, 0.05);
-      color: white;
-      border-style: none;
+    margin-left: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 40px;
+    background: rgba(207, 203, 203, 0.15);
+    border-radius: 15px;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
+      -8px -8px 20px rgba(255, 255, 255, 0.05);
+    color: white;
+    border-style: none;
       .option {
         color: black;
         border-radius: 40px;
@@ -42,7 +50,7 @@
       height: 30px;
       border-radius: 10px;
       border-style: none;
-      
+      font-family: Abhaya Libre SemiBold, sans-serif;
     }
     .enabled{
         background: #10c200;

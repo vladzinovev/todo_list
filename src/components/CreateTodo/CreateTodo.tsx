@@ -1,18 +1,29 @@
 import { useInput } from "@/hook/useInput";
-import { useState } from "react";
+import { StoreContext } from "@/store/store";
+import { calculateDate } from "@/utils/calculateDate";
+import { useContext, useState } from "react";
+import { ITodo } from "../types/types";
 
 import styles from "./CreateTodo.module.scss";
 import Input from "./Input/Input";
 
 const CreateTodo = () => {
+  const { setTodayTodo, setOldTodo, setNewTodo } = useContext(StoreContext);
   const date = useInput("", { isEmpty: true });
   const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 20 });
   const descr = useInput("", { isEmpty: true, minLength: 2, maxLength: 50 });
   const [selected, setSelceted] = useState("important");
+  const [data, setData] = useState<ITodo>();
+
   function handleSubmit(e: any) {
     e.preventDefault();
-    console.log(title);
-    console.log(selected);
+    setData({
+      date:date?.value,
+      title:title.value,
+      descr:descr.value,
+      selected:selected,
+    });
+    calculateDate(date.value, setTodayTodo, setOldTodo, setNewTodo, data);
   }
 
   return (
@@ -21,10 +32,18 @@ const CreateTodo = () => {
         className={styles.form}
         onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
       >
-        <div className={styles.color}></div>
-        <Input idLabel="date" title={date} type='date'/>
-        <Input idLabel="title" title={title} type='text'/>
-        <Input idLabel="descr" title={descr} type='text'/>
+        <div
+          className={`${styles.color} ${
+            selected == "important"
+              ? styles.important
+              : selected == "middle"
+              ? styles.middle
+              : styles.lite
+          } `}
+        ></div>
+        <Input idLabel="date" title={date} type="date" />
+        <Input idLabel="title" title={title} type="text" />
+        <Input idLabel="descr" title={descr} type="text" />
         <select
           onChange={(e) => setSelceted(e.target.value)}
           className={styles.input}
@@ -56,7 +75,7 @@ const CreateTodo = () => {
               : false
           }
         >
-          Отправить
+          Save
         </button>
       </form>
     </div>

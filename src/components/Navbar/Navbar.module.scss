@@ -35,9 +35,15 @@
     transform: translateY(150%);
     animation: ani 1s forwards;
     width: 200px;
-    background: red;
-    border-radius: 20px;
+    background: #282828;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
+      -8px -8px 20px rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
     position: absolute;
+    color: white;
+    p {
+      font-family: Abhaya Libre SemiBold, sans-serif;
+    }
     .settings {
       .flex {
         margin-top: 5px;
