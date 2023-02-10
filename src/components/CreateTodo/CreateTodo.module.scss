@@ -1,6 +1,5 @@
 .create {
-    display:none;
-  margin-top: 5px;
+  margin-top: 15px;
   width: 350px;
   background: #282828;
   box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
@@ -17,6 +16,8 @@
       border-radius: 3px;
     }
     .input {
+        
+        font-family: Abhaya Libre SemiBold, sans-serif;
       margin-left: 20px;
       padding: 5px;
       margin-bottom: 10px;
@@ -41,7 +42,15 @@
       height: 30px;
       border-radius: 10px;
       border-style: none;
-      background: #10c200;
+      
+    }
+    .enabled{
+        background: #10c200;
+        color:white;
+    }
+    .disabled{
+        background: #366EFF;
+        color:white;
     }
   }
 }
