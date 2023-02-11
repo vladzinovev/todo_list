@@ -57,7 +57,7 @@ const CreateTodo = () => {
         <Input idLabel="descr" title={descr} type="text" />
         <select
           onChange={(e) => setSelceted(e.target.value)}
-          className={styles.input}
+          className={styles.select}
           name="task"
           id="task"
         >

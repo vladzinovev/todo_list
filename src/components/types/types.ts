@@ -27,6 +27,7 @@ export interface IInput {
 export interface ISwitch {
   active: boolean;
   setBoolean: Dispatch<SetStateAction<boolean>> | undefined;
+  todoNow:ITodo[] | undefined;
   setTodo: Dispatch<SetStateAction<ITodo[]>> | undefined;
   keyId: number | undefined;
 }
@@ -34,5 +35,11 @@ export interface ISwitch {
 export interface IItemTodo {
   todo: ITodo;
   key:number;
-  setTodayTodo: Dispatch<SetStateAction<ITodo[]>>;
+  todoNow:ITodo[];
+  setTodo: Dispatch<SetStateAction<ITodo[]>>;
+}
+
+export interface IItem {
+  key:number;
+  td: ITodo;
 }

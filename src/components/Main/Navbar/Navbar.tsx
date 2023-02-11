@@ -58,11 +58,11 @@ const Navbar = () => {
             <div className={styles.settings}>
               <div className={styles.flex}>
                 <p>News</p>
-                <UiSwitch active={newsOpen} setBoolean={setNewsOpen} setTodo={undefined} keyId={undefined}/>
+                <UiSwitch active={newsOpen} setBoolean={setNewsOpen}  todoNow={undefined} setTodo={undefined} keyId={undefined} />
               </div>
               <div className={styles.flex}>
                 <p>Old ToDo</p>
-                <UiSwitch active={oldTodoOpen} setBoolean={setOldTodoOpen} setTodo={undefined} keyId={undefined}/>
+                <UiSwitch active={oldTodoOpen} setBoolean={setOldTodoOpen} todoNow={undefined} setTodo={undefined} keyId={undefined}/>
               </div>
             </div>
           </div>

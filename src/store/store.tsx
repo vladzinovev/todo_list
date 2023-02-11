@@ -61,15 +61,21 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
   const [newTodo, setNewTodo] = useState<ITodo[]>([]);
   const [id, setId] = useState<number>(1);
 
-  useEffect(() => {
-    console.log('Старый');
-  }, [oldTodo]);
-  useEffect(() => {
-    console.log('Cейчас');
-  }, [todayTodo]);
-  useEffect(() => {
-    console.log('Новый');
-  }, [newTodo]);
+  function sortTodo(todo:ITodo[], setTodo:Dispatch<SetStateAction<ITodo[]>>) {
+    const forSort = [...todo];
+    setTodo(
+      forSort.sort((a: ITodo, b: ITodo): number => {
+        if (a.date > b.date) return 1;
+        if (a.date < b.date) return -1;
+        return 0;
+      })
+    );
+  }
+ useEffect(() => {
+    sortTodo(oldTodo, setOldTodo);
+    sortTodo(newTodo, setNewTodo);
+    console.log(newTodo);
+  }, [id]);
 
   return (
     <StoreContext.Provider

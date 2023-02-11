@@ -2,7 +2,7 @@ import { IItemTodo } from "@/components/types/types";
 import UiSwitch from "@/ui/UiSwitch/UiSwitch";
 import { FC } from "react";
 import styles from "./ItemTodo.module.scss";
-const ItemTodo:FC<IItemTodo> = ({todo,key,setTodayTodo}) => {
+const ItemTodo:FC<IItemTodo> = ({todo,key,todoNow,setTodo}) => {
     return (
         <div className={styles.item} key={key}>
         <div
@@ -19,7 +19,7 @@ const ItemTodo:FC<IItemTodo> = ({todo,key,setTodayTodo}) => {
           <p className={styles.descr}>{todo?.descr.length<26?todo?.descr :todo?.descr.substr(0,26)+'...'}</p>
         </div>
         <div className={styles.switch}>
-         <UiSwitch active={todo.switched} setBoolean={undefined} setTodo={setTodayTodo} keyId={todo.id}/>
+         <UiSwitch active={todo.switched} setBoolean={undefined} todoNow={todoNow} setTodo={setTodo} keyId={todo.id} />
         </div>
       </div>
     );

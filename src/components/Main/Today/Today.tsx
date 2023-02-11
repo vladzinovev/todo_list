@@ -22,7 +22,8 @@ const Today = () => {
               <ItemTodo
                 todo={todo}
                 key={todo?.id}
-                setTodayTodo={setTodayTodo}
+                todoNow={todayTodo}
+                setTodo={setTodayTodo}
               />
             ))}
           </div>

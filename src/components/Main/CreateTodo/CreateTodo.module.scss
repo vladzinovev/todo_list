@@ -24,10 +24,10 @@
     .lite{
         background: #FFEB33;
     }
-    .input {
+    .select {
         font-family: Abhaya Libre SemiBold, sans-serif;
     margin-left: 20px;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     width: 300px;
     height: 40px;
@@ -39,7 +39,7 @@
     border-style: none;
       .option {
         color: black;
-        border-radius: 40px;
+        font-family: Abhaya Libre SemiBold, sans-serif;
       }
     }
     .btn {
