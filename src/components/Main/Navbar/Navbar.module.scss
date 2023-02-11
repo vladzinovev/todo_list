@@ -1,5 +1,6 @@
 .navbar {
   position: relative;
+  
   .btn_navbar {
     width: 350px;
     border-radius: 10px;
@@ -21,6 +22,9 @@
         color: white;
       }
     }
+    .no_click{
+      pointer-events: none;
+    } 
     .btn_settings {
       cursor: pointer;
       background: none;

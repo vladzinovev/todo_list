@@ -1,17 +1,13 @@
 import styles from "./UiCheck.module.scss";
 import True from "../../assets/svg/True.svg";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { StoreContext } from "@/store/store";
 
 const UiCheck = () => {
-    const [checked,setChecked]=useState(false);
-
-    const toogle=(e:any)=>{
-        e.preventDefault();
-        setChecked(!checked)
-    }
+  const {checked,setChecked, } = useContext(StoreContext);
   return (
-    <div className={styles.check} onClick={(e:any)=>toogle(e)}> 
+    <div className={styles.check} onClick={()=>setChecked(prev=>!prev)}> 
       <div className={styles.square}>
         {checked ? <Image className={styles.image} src={True} alt="Check"/> : null}
       </div>

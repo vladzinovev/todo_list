@@ -1,18 +1,20 @@
 
-import CreateTodo from "../CreateTodo/CreateTodo";
-import Items from "../Items/Items";
-import Navbar from "../Navbar/Navbar";
-import Today from "../Today/Today";
+import { StoreContext } from "@/store/store";
+import { useContext } from "react";
+import Navbar from "./Navbar/Navbar";
+import Today from "./Today/Today";
 import styles from "./Main.module.scss";
+import CreateTodo from "./CreateTodo/CreateTodo";
 
 const Main = () => {
+  const {createTodoOpen, settingsOpen,setSettingsOpen } =useContext(StoreContext);
   return (
-  <section className={styles.main}>
+  <section className={styles.main} >
     <div className={styles.container}>
         <Navbar/>
-        <CreateTodo/>
+        {createTodoOpen&&<CreateTodo/>}
         <Today/>
-        <Items/>
+        <NewDays/>
      
     </div>
   </section>

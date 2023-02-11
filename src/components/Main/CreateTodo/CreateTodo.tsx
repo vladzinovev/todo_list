@@ -1,16 +1,17 @@
+import { ITodo } from "@/components/types/types";
 import { useInput } from "@/hook/useInput";
 import { StoreContext } from "@/store/store";
 import { calculateDate } from "@/utils/calculateDate";
-import { useContext, useState } from "react";
-import { ITodo } from "../types/types";
+import { useContext, useEffect, useState } from "react";
+
 
 import styles from "./CreateTodo.module.scss";
 import Input from "./Input/Input";
 
 const CreateTodo = () => {
-  const { setTodayTodo, setOldTodo, setNewTodo } = useContext(StoreContext);
+  const { todayTodo,settingsOpen,setTodayTodo, setOldTodo, setNewTodo,id,setId } = useContext(StoreContext);
   const date = useInput("", { isEmpty: true });
-  const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 20 });
+  const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 18 });
   const descr = useInput("", { isEmpty: true, minLength: 2, maxLength: 50 });
   const [selected, setSelceted] = useState("important");
   const [data, setData] = useState<ITodo>();
@@ -18,16 +19,26 @@ const CreateTodo = () => {
   function handleSubmit(e: any) {
     e.preventDefault();
     setData({
+      id:id,
       date:date?.value,
       title:title.value,
       descr:descr.value,
       selected:selected,
+      switched:false,
     });
-    calculateDate(date.value, setTodayTodo, setOldTodo, setNewTodo, data);
+    console.log(data)
+    
   }
+  useEffect(()=>{
+    setId(prev=>prev+1);
+    calculateDate(date.value,  setOldTodo,setTodayTodo, setNewTodo, data);
+    
+    console.log(data)
+    console.log(todayTodo)
+  },[data])
 
   return (
-    <div className={styles.create}>
+    <div className={`${styles.create} ${settingsOpen && styles.no_click}`}>
       <form
         className={styles.form}
         onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
