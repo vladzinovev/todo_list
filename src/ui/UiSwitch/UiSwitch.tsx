@@ -6,22 +6,19 @@ import { FC, MouseEvent, useContext, useState } from "react";
 import { ISwitch } from "@/components/types/types";
 import { StoreContext } from "@/store/store";
 
-const UiSwitch: FC<ISwitch> = ({ active, setBoolean, setTodo, keyId }) => {
+const UiSwitch: FC<ISwitch> = ({ active, setBoolean, todoNow, setTodo, keyId }) => {
   const { todayTodo} = useContext(StoreContext);
   const [sw,setsw]=useState(active)
   const toogle = (e: MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     setBoolean ? setBoolean(!active) : null;
-    const data = todayTodo.forEach((td) => {
-      if (td.id == keyId) {
-        td.switched = !active;
-      }
-    });
+    
     setsw(!sw)
-    console.log(data);
-    if (setTodo) {
+    console.log(todoNow)
+    console.log(setTodo)
+    if (setTodo && todoNow) {
       setTodo(
-        todayTodo.map((obj) => {
+        todoNow?.map((obj) => {
           if (obj.id == keyId) {
             return {...obj,switched:!sw};
           }
@@ -30,7 +27,7 @@ const UiSwitch: FC<ISwitch> = ({ active, setBoolean, setTodo, keyId }) => {
         })
       );
     }
-    console.log(todayTodo);
+    console.log(todoNow);
   };
   return (
     <div
