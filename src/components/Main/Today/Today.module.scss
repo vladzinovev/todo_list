@@ -23,7 +23,19 @@
     border-radius: 25px;
     margin-top: 12px;
     padding-bottom:21px;
-    
+    .todo {
+      display: flex;
+      .no_todo {
+        margin: 26px auto 0 auto;
+
+        font-family: Abhaya Libre SemiBold, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #f4f4f4;
+      }
+    }
   }
 }
 .no_click {

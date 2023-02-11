@@ -65,7 +65,7 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
     console.log('Старый');
   }, [oldTodo]);
   useEffect(() => {
-    console.log('сейчас');
+    console.log('Cейчас');
   }, [todayTodo]);
   useEffect(() => {
     console.log('Новый');
