@@ -27,19 +27,23 @@ export interface IInput {
 export interface ISwitch {
   active: boolean;
   setBoolean: Dispatch<SetStateAction<boolean>> | undefined;
-  todoNow:ITodo[] | undefined;
+  todoNow: ITodo[] | undefined;
   setTodo: Dispatch<SetStateAction<ITodo[]>> | undefined;
   keyId: number | undefined;
 }
 
 export interface IItemTodo {
   todo: ITodo;
-  key:number;
-  todoNow:ITodo[];
+  key: number;
+  todoNow: ITodo[];
   setTodo: Dispatch<SetStateAction<ITodo[]>>;
 }
 
 export interface IItem {
-  key:number;
+  key: number;
   td: ITodo;
+}
+export interface IUiOpen {
+  action: boolean;
+  setAction: Dispatch<SetStateAction<boolean>>;
 }

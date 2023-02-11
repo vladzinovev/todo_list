@@ -6,9 +6,9 @@ import { SetStateAction, useContext, useEffect, useState } from "react";
 import ItemTodo from "../../Today/ItemTodo/ItemTodo";
 import { converterDate } from "../../../../utils/converterDate";
 import styles from "./Days.module.scss";
-import Item from "./item/item";
+import Item from "./item/Item";
 const Days = () => {
-  const { newTodo} = useContext(StoreContext);
+  const { newTodo } = useContext(StoreContext);
 
   return (
     <>
@@ -17,13 +17,13 @@ const Days = () => {
             <>
               {key == 0 ? (
                 <>
-                  <Item key={key} td={td}/>
+                  <Item key={key} td={td} />
                 </>
               ) : (
                 <>
-                  {td.date ===newTodo[key - 1 > 0 ? key - 1 : 0].date ? null : (
-                    <Item key={key} td={td}/>
-                    
+                  {td.date ===
+                  newTodo[key - 1 > 0 ? key - 1 : 0].date ? null : (
+                    <Item key={key} td={td} />
                   )}
                 </>
               )}
