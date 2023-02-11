@@ -39,11 +39,21 @@ export interface IItemTodo {
   setTodo: Dispatch<SetStateAction<ITodo[]>>;
 }
 
-export interface IItem {
-  key: number;
-  td: ITodo;
-}
 export interface IUiOpen {
   action: boolean;
   setAction: Dispatch<SetStateAction<boolean>>;
+}
+export interface IDays {
+  todoDay: ITodo[];
+  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
+}
+
+export interface IItem {
+  key: number;
+  td: ITodo;
+  todoDay: ITodo[];
+  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
+}
+export interface INoTodo{
+  text:string
 }

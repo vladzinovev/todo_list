@@ -6,8 +6,8 @@ import { converterDate } from "@/utils/converterDate";
 import { FC, useContext, useState } from "react";
 import styles from "./Item.module.scss";
 
-const Item: FC<IItem> = ({ key, td }) => {
-  const { newTodo, setNewTodo, settingsOpen } = useContext(StoreContext);
+const Item: FC<IItem> = ({ key, td,todoDay,setTodoDay }) => {
+  const {settingsOpen } = useContext(StoreContext);
   const [action, setAction] = useState<boolean>(false);
   return (
     <div
@@ -25,14 +25,14 @@ const Item: FC<IItem> = ({ key, td }) => {
           </div>
         </div>
         {action &&
-          newTodo.map((nt) => (
+          todoDay.map((nt) => (
             <>
               {nt.date == td.date ? (
                 <ItemTodo
                   todo={nt}
                   key={nt.id}
-                  todoNow={newTodo}
-                  setTodo={setNewTodo}
+                  todoNow={todoDay}
+                  setTodo={setTodoDay}
                 />
               ) : null}
             </>
