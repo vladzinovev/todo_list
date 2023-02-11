@@ -6,6 +6,7 @@ import styles from "./Main.module.scss";
 import CreateTodo from "./CreateTodo/CreateTodo";
 import Days from "./CreateTodo/Days/Days";
 import NoTodo from "./Today/NoTodo/NoTodo";
+import Footer from "./Footer/Footer";
 
 const Main = () => {
   const { createTodoOpen,oldTodoOpen,oldTodo,newTodo,setOldTodo,setNewTodo } =
@@ -19,6 +20,7 @@ const Main = () => {
         {oldTodoOpen ? oldTodo.length? <Days todoDay={oldTodo} setTodoDay={setOldTodo}/>:<NoTodo text='There are no old tasks'/>:null}
         <Today />
         <Days todoDay={newTodo} setTodoDay={setNewTodo}/>
+        <Footer/>
       </div>
     </section>
   );
