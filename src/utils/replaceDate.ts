@@ -1,8 +1,8 @@
 export function replaceDate(todayDate: Date) {
-    const month =
+  const month =
     todayDate.getUTCMonth() + 1 < 10
       ? "0" + (todayDate.getUTCMonth() + 1)
-      : todayDate.getUTCMonth() + 1; 
+      : todayDate.getUTCMonth() + 1;
   const day =
     todayDate.getDate() < 10
       ? "0" + todayDate.getUTCDate()

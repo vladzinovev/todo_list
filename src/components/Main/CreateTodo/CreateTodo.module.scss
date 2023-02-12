@@ -35,7 +35,7 @@
       border-radius: 15px;
       box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
         -8px -8px 20px rgba(255, 255, 255, 0.05);
-      color: white;
+      color: #ffffff;
       border-style: none;
       .option {
         color: black;
@@ -54,11 +54,11 @@
     }
     .enabled {
       background: #10c200;
-      color: white;
+      color: #ffffff;
     }
     .disabled {
       background: #366eff;
-      color: white;
+      color: #ffffff;
     }
   }
 }

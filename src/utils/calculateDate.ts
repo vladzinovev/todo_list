@@ -1,5 +1,6 @@
-import { ITodo } from "@/components/types/types";
 import { Dispatch, SetStateAction } from "react";
+
+import { ITodo } from "@/types/types";
 import { replaceDate } from "./replaceDate";
 
 export function calculateDate(

@@ -1,6 +1,6 @@
-import { IDays } from "@/types/types";
 import { FC } from "react";
 
+import { IDays } from "@/types/types";
 import Item from "./item/Item";
 
 const Days: FC<IDays> = ({ todoDay, setTodoDay }) => {

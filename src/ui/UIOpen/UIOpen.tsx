@@ -1,15 +1,13 @@
-import { FC, useContext, useEffect, useState } from "react";
-import styles from "./UiOpen.module.scss";
+import { FC, useEffect, useState } from "react";
+import Image from "next/image";
+
 import arrow from "../../assets/svg/Arrow.svg";
 import arrowUp from "../../assets/svg/ArrowUp.svg";
-import Image from "next/image";
 import { IUiOpen } from "@/types/types";
-import { StoreContext } from "@/store/store";
+import styles from "./UiOpen.module.scss";
 
 const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {
   const [checkeds, setCheckeds] = useState(td.open);
-  console.log(td.id);
-  console.log(td.open);
   const toggle = () => {
     setCheckeds(!checkeds);
     if (setTodoDay && todoDay) {
@@ -23,9 +21,9 @@ const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {
       );
     }
   };
-  useEffect(()=>{
-    setCheckeds(td.open)
-  },[todoDay])
+  useEffect(() => {
+    setCheckeds(td.open);
+  }, [todoDay]);
   return (
     <div className={styles.open} onClick={toggle}>
       <div className={styles.circle}>

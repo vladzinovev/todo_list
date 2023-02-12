@@ -14,7 +14,16 @@
       margin-left: 10px;
     }
   }
-  
+  .description {
+    width: 350px;
+    min-height: 79px;
+    background: #282828;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
+      -8px -8px 20px rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    margin-top: 12px;
+    padding-bottom: 21px;
+  }
 }
 .no_click {
   pointer-events: none;

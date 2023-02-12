@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 export interface ITodo {
   id: number;
-  open:boolean;
+  open: boolean;
   date: string;
   title: string;
   descr: string;
@@ -11,7 +11,7 @@ export interface ITodo {
 }
 
 export interface ITitle {
-  value: any;
+  value: string;
   isEmpty: boolean;
   minLengthError: boolean;
   maxLengthError: boolean;
@@ -20,10 +20,11 @@ export interface ITitle {
   onChange?: any;
   onBlur?: any;
 }
+
 export interface IInput {
   idLabel: string;
   type: string;
-  title?: ITitle | undefined;
+  title?: ITitle;
 }
 export interface ISwitch {
   active: boolean;
@@ -33,6 +34,19 @@ export interface ISwitch {
   keyId: number | undefined;
 }
 
+export interface IDays {
+  todoDay: ITodo[];
+  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
+}
+
+export interface IUiOpen extends IDays {
+  td: ITodo;
+}
+
+export interface IItem extends IUiOpen {
+  key: number;
+}
+
 export interface IItemTodo {
   todo: ITodo;
   key: number;
@@ -40,22 +54,26 @@ export interface IItemTodo {
   setTodo: Dispatch<SetStateAction<ITodo[]>>;
 }
 
-export interface IUiOpen {
-  td:ITodo;
-  todoDay:ITodo[];
-  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
-}
-export interface IDays {
-  todoDay: ITodo[];
-  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
-}
-
-export interface IItem {
-  key: number;
-  td: ITodo;
-  todoDay: ITodo[];
-  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
-}
 export interface INoTodo {
   text: string;
+}
+export interface Source {
+  id: string;
+  name: string;
+}
+export interface Article {
+  source: Source;
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: Date;
+  content: string;
+}
+
+export interface INews {
+  status:string;
+  totalResults:number;
+  articles:Article[];
 }

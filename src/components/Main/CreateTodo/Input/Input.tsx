@@ -1,4 +1,4 @@
-import { IInput } from "@/components/types/types";
+import { IInput } from "@/types/types";
 import styles from "./Input.module.scss";
 
 const Input = ({ idLabel, type, title }: IInput) => {

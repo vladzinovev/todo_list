@@ -3,11 +3,12 @@ import { useContext } from "react";
 import { StoreContext } from "@/store/store";
 import Navbar from "./Navbar/Navbar";
 import Today from "./Today/Today";
-import styles from "./Main.module.scss";
 import CreateTodo from "./CreateTodo/CreateTodo";
 import Days from "./Days/Days";
 import NoTodo from "./Today/NoTodo/NoTodo";
 import Footer from "./Footer/Footer";
+
+import styles from "./Main.module.scss";
 
 const Main = () => {
   const {

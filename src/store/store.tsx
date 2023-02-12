@@ -1,4 +1,3 @@
-
 import { ITodo } from "@/types/types";
 import {
   createContext,
@@ -75,7 +74,6 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     sortTodo(oldTodo, setOldTodo);
     sortTodo(newTodo, setNewTodo);
-    console.log(newTodo);
   }, [id]);
 
   return (

@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { FC, MouseEvent, useContext, useState } from "react";
+import { FC, MouseEvent, useState } from "react";
 
-import styles from "./UiSwitch.module.scss";
 import close from "../../assets/svg/Close.svg";
 import open from "../../assets/svg/Open.svg";
 import { ISwitch } from "@/types/types";
+import styles from "./UiSwitch.module.scss";
 
 const UiSwitch: FC<ISwitch> = ({
   active,
@@ -14,7 +14,7 @@ const UiSwitch: FC<ISwitch> = ({
   keyId,
 }) => {
   const [sw, setsw] = useState(active);
-  const toogle = (e: MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const toogle = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
     e.preventDefault();
     setBoolean ? setBoolean(!active) : null;
 
@@ -33,7 +33,9 @@ const UiSwitch: FC<ISwitch> = ({
   return (
     <div
       className={`${styles.switch} ${sw ? styles.active : styles.not_active}`}
-      onClick={(e: any) => toogle(e)}
+      onClick={(e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) =>
+        toogle(e)
+      }
     >
       <div className={styles.circle}>
         <Image
