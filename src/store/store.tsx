@@ -1,4 +1,5 @@
-import { ITodo } from "@/components/types/types";
+
+import { ITodo } from "@/types/types";
 import {
   createContext,
   Dispatch,
@@ -74,6 +75,7 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     sortTodo(oldTodo, setOldTodo);
     sortTodo(newTodo, setNewTodo);
+    console.log(newTodo);
   }, [id]);
 
   return (

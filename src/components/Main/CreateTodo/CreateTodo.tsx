@@ -1,6 +1,7 @@
-import { ITodo } from "@/components/types/types";
+
 import { useInput } from "@/hook/useInput";
 import { StoreContext } from "@/store/store";
+import { ITodo } from "@/types/types";
 import { calculateDate } from "@/utils/calculateDate";
 import { useContext, useEffect, useState } from "react";
 
@@ -9,7 +10,6 @@ import Input from "./Input/Input";
 
 const CreateTodo = () => {
   const {
-    todayTodo,
     settingsOpen,
     setTodayTodo,
     setOldTodo,
@@ -27,12 +27,14 @@ const CreateTodo = () => {
     e.preventDefault();
     setData({
       id: id,
+      open:false,
       date: date?.value,
       title: title.value,
       descr: descr.value,
       selected: selected,
       switched: false,
     });
+    e.target.reset();
   }
   useEffect(() => {
     setId((prev) => prev + 1);

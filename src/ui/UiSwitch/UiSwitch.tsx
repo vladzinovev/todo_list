@@ -1,10 +1,10 @@
+import Image from "next/image";
+import { FC, MouseEvent, useContext, useState } from "react";
+
 import styles from "./UiSwitch.module.scss";
 import close from "../../assets/svg/Close.svg";
 import open from "../../assets/svg/Open.svg";
-import Image from "next/image";
-import { FC, MouseEvent, useContext, useState } from "react";
-import { ISwitch } from "@/components/types/types";
-import { StoreContext } from "@/store/store";
+import { ISwitch } from "@/types/types";
 
 const UiSwitch: FC<ISwitch> = ({
   active,
@@ -13,7 +13,6 @@ const UiSwitch: FC<ISwitch> = ({
   setTodo,
   keyId,
 }) => {
-  const { todayTodo } = useContext(StoreContext);
   const [sw, setsw] = useState(active);
   const toogle = (e: MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();

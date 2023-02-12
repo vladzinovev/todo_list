@@ -1,6 +1,6 @@
+import { IDays } from "@/types/types";
 import { FC } from "react";
 
-import { IDays } from "@/components/types/types";
 import Item from "./item/Item";
 
 const Days: FC<IDays> = ({ todoDay, setTodoDay }) => {
@@ -9,7 +9,7 @@ const Days: FC<IDays> = ({ todoDay, setTodoDay }) => {
       {todoDay.length
         ? todoDay.map((td, key) => (
             <>
-              {key == 0 ? (
+              {key === 0 ? (
                 <>
                   <Item
                     key={key}

@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 export interface ITodo {
   id: number;
+  open:boolean;
   date: string;
   title: string;
   descr: string;
@@ -40,8 +41,9 @@ export interface IItemTodo {
 }
 
 export interface IUiOpen {
-  action: boolean;
-  setAction: Dispatch<SetStateAction<boolean>>;
+  td:ITodo;
+  todoDay:ITodo[];
+  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
 }
 export interface IDays {
   todoDay: ITodo[];
