@@ -1,6 +1,6 @@
 import { API_URL } from "@/services/news.service";
 import { StoreContext } from "@/store/store";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { useQuery } from "react-query";
 
 import styles from "./Footer.module.scss";

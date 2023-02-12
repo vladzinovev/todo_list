@@ -54,6 +54,6 @@ export interface IItem {
   todoDay: ITodo[];
   setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
 }
-export interface INoTodo{
-  text:string
+export interface INoTodo {
+  text: string;
 }

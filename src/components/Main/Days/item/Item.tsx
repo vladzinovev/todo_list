@@ -1,13 +1,14 @@
+import { FC, useContext, useState } from "react";
+
 import ItemTodo from "@/components/Main/Today/ItemTodo/ItemTodo";
 import { IItem } from "@/components/types/types";
 import { StoreContext } from "@/store/store";
 import UiOpen from "@/ui/UiOpen/UiOpen";
 import { converterDate } from "@/utils/converterDate";
-import { FC, useContext, useState } from "react";
 import styles from "./Item.module.scss";
 
-const Item: FC<IItem> = ({ key, td,todoDay,setTodoDay }) => {
-  const {settingsOpen } = useContext(StoreContext);
+const Item: FC<IItem> = ({ key, td, todoDay, setTodoDay }) => {
+  const { settingsOpen } = useContext(StoreContext);
   const [action, setAction] = useState<boolean>(false);
   return (
     <div

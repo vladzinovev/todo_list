@@ -9,7 +9,7 @@ import styles from "./Today.module.scss";
 const Today = () => {
   const { checked, todayTodo, settingsOpen, setTodayTodo } =
     useContext(StoreContext);
-  console.log(todayTodo.length);
+
   return (
     <div className={`${styles.today} ${settingsOpen && styles.no_click}`}>
       <div className={styles.heading}>
@@ -29,7 +29,7 @@ const Today = () => {
             ))}
           </div>
         ) : (
-          <NoTodo text='There are no tasks today'/>
+          <NoTodo text="There are no tasks today" />
         )
       ) : null}
     </div>

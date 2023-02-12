@@ -12,15 +12,12 @@ export function calculateDate(
   const newdate = replaceDate(new Date(Date.now()));
   if (data) {
     if (date < newdate) {
-      console.log("мeньше");
       return setOldTodo((prev) => [...prev, data]);
     }
     if (date == newdate) {
-      console.log("равно");
       return setTodayTodo((prev) => [...prev, data]);
     }
     if (date > newdate) {
-      console.log("больше");
       return setNewTodo((prev) => [...prev, data]);
     }
   }

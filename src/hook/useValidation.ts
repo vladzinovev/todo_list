@@ -28,21 +28,12 @@ export const useValidation = (value: any, validations: any) => {
   }, [value]);
 
   useEffect(() => {
-    if (
-      isEmpty ||
-      maxLengthError ||
-      minLengthError 
-    ) {
+    if (isEmpty || maxLengthError || minLengthError) {
       setInputValid(false);
     } else {
       setInputValid(true);
     }
-  }, [
-    isEmpty,
-    maxLengthError,
-    minLengthError,
-    
-  ]);
+  }, [isEmpty, maxLengthError, minLengthError]);
 
   return {
     value,

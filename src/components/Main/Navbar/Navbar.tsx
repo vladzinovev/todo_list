@@ -1,11 +1,11 @@
-import settings from "../../../assets/svg/Settings.svg";
 import Image from "next/image";
-
-import styles from "./Navbar.module.scss";
-import UiSwitch from "@/ui/UiSwitch/UiSwitch";
-import { StoreContext } from "@/store/store";
 import { useContext } from "react";
 import { ClickAwayListener } from "@mui/material";
+
+import settings from "../../../assets/svg/Settings.svg";
+import UiSwitch from "@/ui/UiSwitch/UiSwitch";
+import { StoreContext } from "@/store/store";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const {
@@ -15,21 +15,12 @@ const Navbar = () => {
     setOldTodoOpen,
     settingsOpen,
     setSettingsOpen,
-    createTodoOpen,
     setCreateTodoOpen,
-    todayTodo,
-    setTodayTodo,
-    oldTodo,
-    setOldTodo,
-    newTodo,
-    setNewTodo,
-    id,
-    setId,
   } = useContext(StoreContext);
 
-  const handleCreateToogle=()=>{
-    setCreateTodoOpen(prev => !prev)
-  }
+  const handleCreateToogle = () => {
+    setCreateTodoOpen((prev) => !prev);
+  };
   const handleDrawerToggle = () => {
     setSettingsOpen((prev) => !prev);
   };
@@ -39,9 +30,10 @@ const Navbar = () => {
       <div className={styles.btn_navbar}>
         <button
           className={`${styles.btn_open} ${settingsOpen && styles.no_click}`}
-          
         >
-          <p className={styles.text} onClick={handleCreateToogle}>To Do</p>
+          <p className={styles.text} onClick={handleCreateToogle}>
+            To Do
+          </p>
         </button>
         <button className={styles.btn_settings}>
           <Image onClick={handleDrawerToggle} src={settings} alt="Settings" />
@@ -58,11 +50,23 @@ const Navbar = () => {
             <div className={styles.settings}>
               <div className={styles.flex}>
                 <p>News</p>
-                <UiSwitch active={newsOpen} setBoolean={setNewsOpen}  todoNow={undefined} setTodo={undefined} keyId={undefined} />
+                <UiSwitch
+                  active={newsOpen}
+                  setBoolean={setNewsOpen}
+                  todoNow={undefined}
+                  setTodo={undefined}
+                  keyId={undefined}
+                />
               </div>
               <div className={styles.flex}>
                 <p>Old ToDo</p>
-                <UiSwitch active={oldTodoOpen} setBoolean={setOldTodoOpen} todoNow={undefined} setTodo={undefined} keyId={undefined}/>
+                <UiSwitch
+                  active={oldTodoOpen}
+                  setBoolean={setOldTodoOpen}
+                  todoNow={undefined}
+                  setTodo={undefined}
+                  keyId={undefined}
+                />
               </div>
             </div>
           </div>

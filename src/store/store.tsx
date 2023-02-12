@@ -61,7 +61,7 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
   const [newTodo, setNewTodo] = useState<ITodo[]>([]);
   const [id, setId] = useState<number>(1);
 
-  function sortTodo(todo:ITodo[], setTodo:Dispatch<SetStateAction<ITodo[]>>) {
+  function sortTodo(todo: ITodo[], setTodo: Dispatch<SetStateAction<ITodo[]>>) {
     const forSort = [...todo];
     setTodo(
       forSort.sort((a: ITodo, b: ITodo): number => {
@@ -71,10 +71,9 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
       })
     );
   }
- useEffect(() => {
+  useEffect(() => {
     sortTodo(oldTodo, setOldTodo);
     sortTodo(newTodo, setNewTodo);
-    console.log(newTodo);
   }, [id]);
 
   return (
@@ -82,7 +81,8 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
       value={{
         newsOpen,
         setNewsOpen,
-        oldTodoOpen, setOldTodoOpen,
+        oldTodoOpen,
+        setOldTodoOpen,
         settingsOpen,
         setSettingsOpen,
         createTodoOpen,

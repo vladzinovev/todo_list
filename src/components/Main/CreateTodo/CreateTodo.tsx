@@ -4,12 +4,19 @@ import { StoreContext } from "@/store/store";
 import { calculateDate } from "@/utils/calculateDate";
 import { useContext, useEffect, useState } from "react";
 
-
 import styles from "./CreateTodo.module.scss";
 import Input from "./Input/Input";
 
 const CreateTodo = () => {
-  const { todayTodo,settingsOpen,setTodayTodo, setOldTodo, setNewTodo,id,setId } = useContext(StoreContext);
+  const {
+    todayTodo,
+    settingsOpen,
+    setTodayTodo,
+    setOldTodo,
+    setNewTodo,
+    id,
+    setId,
+  } = useContext(StoreContext);
   const date = useInput("", { isEmpty: true });
   const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 18 });
   const descr = useInput("", { isEmpty: true, minLength: 2, maxLength: 50 });
@@ -19,23 +26,18 @@ const CreateTodo = () => {
   function handleSubmit(e: any) {
     e.preventDefault();
     setData({
-      id:id,
-      date:date?.value,
-      title:title.value,
-      descr:descr.value,
-      selected:selected,
-      switched:false,
+      id: id,
+      date: date?.value,
+      title: title.value,
+      descr: descr.value,
+      selected: selected,
+      switched: false,
     });
-    console.log(data)
-    
   }
-  useEffect(()=>{
-    setId(prev=>prev+1);
-    calculateDate(date.value,  setOldTodo,setTodayTodo, setNewTodo, data);
-    
-    console.log(data)
-    console.log(todayTodo)
-  },[data])
+  useEffect(() => {
+    setId((prev) => prev + 1);
+    calculateDate(date.value, setOldTodo, setTodayTodo, setNewTodo, data);
+  }, [data]);
 
   return (
     <div className={`${styles.create} ${settingsOpen && styles.no_click}`}>
