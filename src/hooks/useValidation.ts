@@ -27,11 +27,8 @@ export const useValidation = (value: string, validations: []) => {
   }, [value]);
 
   useEffect(() => {
-    if (isEmpty || maxLengthError || minLengthError) {
-      setInputValid(false);
-    } else {
-      setInputValid(true);
-    }
+    const Error = isEmpty || maxLengthError || minLengthError;
+    Error ? setInputValid(false) : setInputValid(true);
   }, [isEmpty, maxLengthError, minLengthError]);
 
   return {

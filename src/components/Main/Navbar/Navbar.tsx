@@ -1,4 +1,7 @@
 import { useContext, useState } from "react";
+import React from "react";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import {
   Box,
   Avatar,
@@ -22,33 +25,31 @@ import {
   AccordionBox,
   AccordionDetailsBox,
 } from "./NavbarStyle";
-import Button from "@mui/material/Button";
-import React from "react";
-import Typography from "@mui/material/Typography";
 import CreateTodo from "../CreateTodo/CreateTodo";
 
 const Navbar = () => {
-  const {
-    newsOpen,
-    setNewsOpen,
-    oldTodoOpen,
-    setOldTodoOpen,
-  } = useContext(StoreContext);
+  const { newsOpen, setNewsOpen, oldTodoOpen, setOldTodoOpen } =
+    useContext(StoreContext);
 
   const [expanded, setExpanded] = useState<boolean>(true);
-
   const [settingsEl, setSettingsEl] = useState<null | HTMLElement>(null);
   const open = Boolean(settingsEl);
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setSettingsEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setSettingsEl(null);
   };
 
   return (
     <>
-      <Accordion sx={AccordionNavbar} expanded={expanded} onChange={()=>setExpanded(!expanded)}>
+      <Accordion
+        sx={AccordionNavbar}
+        expanded={expanded}
+        onChange={() => setExpanded(!expanded)}
+      >
         <Box sx={AccordionBox}>
           <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
             <Typography sx={BoxNavbatBtn}>To Do</Typography>

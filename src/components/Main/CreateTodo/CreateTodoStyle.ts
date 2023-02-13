@@ -23,9 +23,9 @@ export const FormBtn = {
   padding: 0,
 };
 export const TypographyError = {
-    color: "rgba(255, 0, 0, 0.678)",
-    fontSize: "10px",
-    marginLeft: "22px",
-    marginBottom: "5px",
-    fontFamily: "Abhaya Libre SemiBold, sans-serif",
-  };
+  color: "rgba(255, 0, 0, 0.678)",
+  fontSize: "10px",
+  marginLeft: "22px",
+  marginBottom: "5px",
+  fontFamily: "Abhaya Libre SemiBold, sans-serif",
+};

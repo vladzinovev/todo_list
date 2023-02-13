@@ -1,14 +1,16 @@
-import styles from "@/styles/Home.module.scss";
+import { Box } from "@mui/material";
+
 import Main from "@/components/Main/Main";
 import Header from "@/components/Head/Head";
+import { BoxHeader } from "@/styles/indexStyle";
 
 export default function Home() {
   return (
-    <div className={styles.home}>
+    <Box sx={BoxHeader}>
       <Header />
       <main>
         <Main />
       </main>
-    </div>
+    </Box>
   );
 }

@@ -16,8 +16,18 @@ export interface IStoreContext {
   id: number;
   setId: Dispatch<SetStateAction<number>>;
 }
+export interface IDays {
+  todoDay: ITodo[];
+  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
+}
+export interface IUiOpen extends IDays {
+  td: ITodo;
+}
+export interface IItem extends IUiOpen {
+  key: number;
+}
 
-export interface ITodo {
+export type ITodo = {
   id: number;
   open: boolean;
   date: string;
@@ -25,9 +35,8 @@ export interface ITodo {
   descr: string;
   selected: string;
   switched: boolean;
-}
-
-export interface ITitle {
+};
+export type ITitle = {
   value: string;
   isEmpty: boolean;
   minLengthError: boolean;
@@ -36,49 +45,33 @@ export interface ITitle {
   isDirty: boolean;
   onChange?: any;
   onBlur?: any;
-}
-
-export interface IInput {
+};
+export type IInput = {
   idLabel: string;
   type: string;
   title?: ITitle;
-}
-export interface ISwitch {
+};
+export type ISwitch = {
   active: boolean;
-  setBoolean: Dispatch<SetStateAction<boolean>> | undefined;
+  setBoolean?: Dispatch<SetStateAction<boolean>>;
   todoNow: ITodo[] | undefined;
-  setTodo: Dispatch<SetStateAction<ITodo[]>> | undefined;
+  setTodo?: Dispatch<SetStateAction<ITodo[]>>;
   keyId: number | undefined;
-}
-
-export interface IDays {
-  todoDay: ITodo[];
-  setTodoDay: Dispatch<SetStateAction<ITodo[]>>;
-}
-
-export interface IUiOpen extends IDays {
-  td: ITodo;
-}
-
-export interface IItem extends IUiOpen {
-  key: number;
-}
-
-export interface IItemTodo {
+};
+export type IItemTodo = {
   todo: ITodo;
   key: number;
   todoNow: ITodo[];
   setTodo: Dispatch<SetStateAction<ITodo[]>>;
-}
-
-export interface INoTodo {
+};
+export type INoTodo = {
   text: string;
-}
-export interface Source {
+};
+export type Source = {
   id: string;
   name: string;
-}
-export interface Article {
+};
+export type Article = {
   source: Source;
   author: string;
   title: string;
@@ -87,10 +80,9 @@ export interface Article {
   urlToImage: string;
   publishedAt: Date;
   content: string;
-}
-
-export interface INews {
-  status:string;
-  totalResults:number;
-  articles:Article[];
-}
+};
+export type INews = {
+  status: string;
+  totalResults: number;
+  articles: Article[];
+};

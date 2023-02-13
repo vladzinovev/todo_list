@@ -1,8 +1,7 @@
-
-import { FC,useState } from "react";
+import { FC, useState } from "react";
+import { FormControlLabel, styled, Switch, SwitchProps } from "@mui/material";
 
 import { ISwitch } from "@/types/types";
-import { FormControlLabel, styled, Switch, SwitchProps } from "@mui/material";
 
 const IOSSwitch = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -98,6 +97,7 @@ const UiSwitch: FC<ISwitch> = ({
       );
     }
   };
+
   return (
     <FormControlLabel
       control={

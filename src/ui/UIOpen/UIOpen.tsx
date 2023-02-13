@@ -1,13 +1,14 @@
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
+import { Box } from "@mui/material";
 
 import arrow from "../../assets/svg/Arrow.svg";
 import arrowUp from "../../assets/svg/ArrowUp.svg";
 import { IUiOpen } from "@/types/types";
-import { Box } from "@mui/material";
 
 const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {
   const [checkeds, setCheckeds] = useState(td.open);
+
   const toggle = () => {
     setCheckeds(!checkeds);
     if (setTodoDay && todoDay) {
@@ -21,15 +22,14 @@ const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {
       );
     }
   };
+
   useEffect(() => {
     setCheckeds(td.open);
   }, [todoDay]);
+
   return (
-    <Box mt="3px" sx={{cursor:'pointer'}} onClick={toggle}>
-      <Image
-        src={checkeds ? arrowUp : arrow}
-        alt="Arrow"
-      />
+    <Box mt="3px" sx={{ cursor: "pointer" }} onClick={toggle}>
+      <Image src={checkeds ? arrowUp : arrow} alt="Arrow" />
     </Box>
   );
 };

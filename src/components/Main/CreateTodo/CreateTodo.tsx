@@ -1,18 +1,19 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
+import Button from "@mui/material/Button";
+import { Box } from "@mui/material";
 
 import { useInput } from "@/hooks/useInput";
 import { StoreContext } from "@/store/store";
 import { ITodo } from "@/types/types";
 import { calculateDate } from "@/utils/calculateDate";
 import TextField from "./Input/Input";
-import styles from "./CreateTodo.module.scss";
-import { Box } from "@mui/material";
 import { BoxCreate, CardBoxColor, FormBtn } from "./CreateTodoStyle";
-import Button from "@mui/material/Button";
+import styles from "./CreateTodo.module.scss";
 
 const CreateTodo = () => {
   const { setTodayTodo, setOldTodo, setNewTodo, id, setId } =
     useContext(StoreContext);
+
   const date = useInput("", { isEmpty: true });
   const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 18 });
   const descr = useInput("", { isEmpty: true, minLength: 2, maxLength: 50 });
@@ -35,6 +36,7 @@ const CreateTodo = () => {
     resetForm.reset();
     setSelceted("important");
   }
+
   useEffect(() => {
     setId((prev) => prev + 1);
     calculateDate(date.value, setOldTodo, setTodayTodo, setNewTodo, data);
@@ -75,7 +77,6 @@ const CreateTodo = () => {
             Lite
           </option>
         </select>
-
         <Button
           sx={FormBtn}
           className={`${styles.btn} ${

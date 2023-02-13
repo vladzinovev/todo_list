@@ -1,4 +1,3 @@
-import { IStoreContext, ITodo } from "@/types/types";
 import {
   createContext,
   Dispatch,
@@ -7,6 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { IStoreContext, ITodo } from "@/types/types";
 
 export const StoreContext = createContext<IStoreContext>({
   newsOpen: true,
@@ -28,7 +28,7 @@ export const StoreContext = createContext<IStoreContext>({
 const StoreComponent = ({ children }: { children: ReactNode }) => {
   const [newsOpen, setNewsOpen] = useState(true);
   const [oldTodoOpen, setOldTodoOpen] = useState(false);
-  
+
   const [checked, setChecked] = useState(false);
   const [todayTodo, setTodayTodo] = useState<ITodo[]>([]);
   const [oldTodo, setOldTodo] = useState<ITodo[]>([]);

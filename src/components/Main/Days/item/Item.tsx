@@ -1,12 +1,12 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
+import Card from "@mui/material/Card";
+import { Box, CardContent, Typography } from "@mui/material";
 
 import ItemTodo from "@/components/Main/Today/ItemTodo/ItemTodo";
 import { converterDate } from "@/utils/converterDate";
 import UiOpen from "@/ui/UIOpen/UIOpen";
 import { IItem } from "@/types/types";
-import { Box, CardContent, Typography } from "@mui/material";
 import { BoxItem } from "../../Today/TodayStyle";
-import Card from "@mui/material/Card";
 import {
   CardBoxColor,
   CardContentMain,
@@ -15,6 +15,7 @@ import {
 } from "./ItemStyle";
 
 const Item: FC<IItem> = ({ key, td, todoDay, setTodoDay }) => {
+
   return (
     <Box mt="30px" sx={BoxItem} key={key}>
       <Card sx={CardItem}>
@@ -44,5 +45,4 @@ const Item: FC<IItem> = ({ key, td, todoDay, setTodoDay }) => {
     </Box>
   );
 };
-
 export default Item;

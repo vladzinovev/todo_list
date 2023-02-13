@@ -1,11 +1,11 @@
 import { useContext } from "react";
+import { Box, Typography } from "@mui/material";
 
+import { BoxItem, BoxToday, TodayTypography } from "./TodayStyle";
 import { StoreContext } from "@/store/store";
 import UiCheck from "../../../ui/UiCheck/UiCheck";
 import ItemTodo from "./ItemTodo/ItemTodo";
 import NoTodo from "./NoTodo/NoTodo";
-import { Box, Typography } from "@mui/material";
-import { BoxItem, BoxToday, TodayTypography } from "./TodayStyle";
 
 const Today = () => {
   const { checked, todayTodo, setTodayTodo } = useContext(StoreContext);
@@ -18,7 +18,7 @@ const Today = () => {
       </Box>
       {checked ? (
         todayTodo.length ? (
-          <Box mt='12px' sx={BoxItem}>
+          <Box mt="12px" sx={BoxItem}>
             {todayTodo.map((todo) => (
               <ItemTodo
                 todo={todo}

@@ -1,23 +1,31 @@
+import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
 import error from "../assets/gif/error.gif";
-import styles from "../styles/Page404.module.scss";
+import {
+  BoxButton,
+  BoxError,
+  BoxTypography1,
+  BoxTypography2,
+  BoxTypography3,
+} from "../styles/404Style";
 
 const Page404 = () => (
-        <section className={styles.page404}>
-        <p className={styles.error}>404</p>
-        <p className={styles.not_found}>страница не найдена</p>
-    
-        <Image className={styles.img} alt="error" src={error} />
-        <p className={styles.description}>
-          страница, на которую вы пытаетесь попасть, не существует или была удалена.
-        </p>
-        <button className={styles.btn}>
-          <Link className={styles.link} href={"/"}>
-            Вернуться на главную страницу
-          </Link>
-        </button>
-      </section>
-  );
-  export default Page404;
+  <Box sx={BoxError}>
+    <Typography sx={BoxTypography1}>404</Typography>
+    <Typography sx={BoxTypography2}>страница не найдена</Typography>
+    <Image alt="error" src={error} />
+    <Typography sx={BoxTypography3}>
+      страница, на которую вы пытаетесь попасть, не существует или была удалена.
+    </Typography>
+    <Button sx={BoxButton}>
+      <Link href={"/"}>
+        <Typography sx={{ color: "#ffffff" }}>
+          Вернуться на главную страницу
+        </Typography>
+      </Link>
+    </Button>
+  </Box>
+);
+export default Page404;

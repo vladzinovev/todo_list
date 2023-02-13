@@ -1,12 +1,13 @@
 import { useContext } from "react";
-
-import CheckIcon from "@mui/icons-material/Check";
-import { StoreContext } from "@/store/store";
 import { Box, Button } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
+
+import { StoreContext } from "@/store/store";
 import { BoxCheck, BoxImage } from "./UiCheckStyle";
 
 const UiCheck = () => {
   const { checked, setChecked } = useContext(StoreContext);
+
   return (
     <Box sx={BoxCheck} onClick={() => setChecked((prev) => !prev)}>
       {checked ? (

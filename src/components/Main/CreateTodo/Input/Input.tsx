@@ -1,9 +1,11 @@
-import { IInput } from "@/types/types";
 import Typography from "@mui/material/Typography";
+
+import { IInput } from "@/types/types";
 import { TypographyError } from "../CreateTodoStyle";
 import styles from "./Input.module.scss";
 
 const Input = ({ idLabel, type, title }: IInput) => {
+  
   return (
     <>
       {title?.isDirty && title.minLengthError && (

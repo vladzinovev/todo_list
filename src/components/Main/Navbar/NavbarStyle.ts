@@ -7,7 +7,6 @@ export const BoxNavbarBtns = {
   display: "flex",
   justifyContent: "space-between",
 };
-
 export const AccordionNavbar = {
   borderStyle: "none",
   background: "none",
@@ -22,7 +21,7 @@ export const AccordionBox = {
     marginTop: "20px",
   },
 };
-export const AccordionDetailsBox = { marginLeft: "-16px" }
+export const AccordionDetailsBox = { marginLeft: "-16px" };
 export const BoxNavbatBtn = {
   color: "#ffffff",
   width: "120px",
@@ -41,7 +40,6 @@ export const BoxNavbarBtnAvatar = {
   width: "29px",
   height: "30px",
 };
-
 export const NavbarMenu = {
   marginTop: "60px",
   marginLeft: "-135px",

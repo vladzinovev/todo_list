@@ -19,10 +19,10 @@ export const CardContentMain = {
   marginTop: "10px",
 };
 export const CardTypography = {
-    fontFamily: "Abhaya Libre SemiBold, sans-serif",
-    fontStyle: "normal",
-    fontWeight: "400",
-    fontSize: "24px",
-    lineHeight: "28px",
-    color: "#f4f4f4",
-  };
+  fontFamily: "Abhaya Libre SemiBold, sans-serif",
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontSize: "24px",
+  lineHeight: "28px",
+  color: "#f4f4f4",
+};
