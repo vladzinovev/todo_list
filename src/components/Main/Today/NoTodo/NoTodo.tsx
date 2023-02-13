@@ -1,15 +1,15 @@
 import { FC } from "react";
 
 import { INoTodo } from "@/types/types";
-import styles from "./NoTodo.module.scss";
+import { Box, Typography } from "@mui/material";
+import { BoxItemTypography } from "./NoTodoStyle";
+import { BoxItem } from "../TodayStyle";
 
 const NoTodo: FC<INoTodo> = ({ text }) => {
   return (
-    <div className={styles.description}>
-      <div className={styles.todo}>
-        <p className={styles.no_todo}>{text}</p>
-      </div>
-    </div>
+    <Box sx={BoxItem}>
+        <Typography sx={BoxItemTypography}>{text}</Typography>
+    </Box>
   );
 };
 export default NoTodo;

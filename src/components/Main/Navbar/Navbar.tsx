@@ -1,11 +1,31 @@
-import Image from "next/image";
-import { useContext } from "react";
-import { ClickAwayListener } from "@mui/material";
+import { useContext, useState } from "react";
+import {
+  Box,
+  Avatar,
+  Menu,
+  MenuList,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
 
-import settings from "../../../assets/svg/Settings.svg";
 import UiSwitch from "@/ui/UiSwitch/UiSwitch";
 import { StoreContext } from "@/store/store";
-import styles from "./Navbar.module.scss";
+import {
+  BoxNavbar,
+  BoxNavbatBtn,
+  BoxNavbarBtnB,
+  BoxNavbarBtnAvatar,
+  NavbarMenu,
+  NavbarMenuList,
+  AccordionNavbar,
+  AccordionBox,
+  AccordionDetailsBox,
+} from "./NavbarStyle";
+import Button from "@mui/material/Button";
+import React from "react";
+import Typography from "@mui/material/Typography";
+import CreateTodo from "../CreateTodo/CreateTodo";
 
 const Navbar = () => {
   const {
@@ -13,66 +33,93 @@ const Navbar = () => {
     setNewsOpen,
     oldTodoOpen,
     setOldTodoOpen,
-    settingsOpen,
-    setSettingsOpen,
-    setCreateTodoOpen,
   } = useContext(StoreContext);
 
-  const handleCreateToogle = () => {
-    setCreateTodoOpen((prev) => !prev);
+  const [expanded, setExpanded] = useState<boolean>(true);
+
+  const [settingsEl, setSettingsEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(settingsEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setSettingsEl(event.currentTarget);
   };
-  const handleDrawerToggle = () => {
-    setSettingsOpen((prev) => !prev);
+  const handleClose = () => {
+    setSettingsEl(null);
   };
 
   return (
-    <div className={styles.navbar} style={{ position: "relative" }}>
-      <div className={styles.btn_navbar}>
-        <button
-          className={`${styles.btn_open} ${settingsOpen && styles.no_click}`}
-        >
-          <p className={styles.text} onClick={handleCreateToogle}>
-            To Do
-          </p>
-        </button>
-        <button className={styles.btn_settings}>
-          <Image onClick={handleDrawerToggle} src={settings} alt="Settings" />
-        </button>
-      </div>
-
-      {settingsOpen && (
-        <ClickAwayListener onClickAway={() => setSettingsOpen(false)}>
-          <div
-            className={styles.mobile_block}
-            style={{ textAlign: "center", float: "right" }}
+    <>
+      <Accordion sx={AccordionNavbar} expanded={expanded} onChange={()=>setExpanded(!expanded)}>
+        <Box sx={AccordionBox}>
+          <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
+            <Typography sx={BoxNavbatBtn}>To Do</Typography>
+          </AccordionSummary>
+          <Button
+            id="demo-positioned-button"
+            aria-controls={open ? "demo-positioned-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            sx={BoxNavbarBtnB}
+            onClick={handleClick}
           >
-            <p>SETTINGS</p>
-            <div className={styles.settings}>
-              <div className={styles.flex}>
-                <p>News</p>
-                <UiSwitch
-                  active={newsOpen}
-                  setBoolean={setNewsOpen}
-                  todoNow={undefined}
-                  setTodo={undefined}
-                  keyId={undefined}
-                />
-              </div>
-              <div className={styles.flex}>
-                <p>Old ToDo</p>
-                <UiSwitch
-                  active={oldTodoOpen}
-                  setBoolean={setOldTodoOpen}
-                  todoNow={undefined}
-                  setTodo={undefined}
-                  keyId={undefined}
-                />
-              </div>
-            </div>
-          </div>
-        </ClickAwayListener>
-      )}
-    </div>
+            <Avatar
+              variant="rounded"
+              src="/svg/Settings.svg"
+              sx={BoxNavbarBtnAvatar}
+            />
+          </Button>
+        </Box>
+        <AccordionDetails sx={AccordionDetailsBox}>
+          <CreateTodo />
+        </AccordionDetails>
+      </Accordion>
+
+      <Box sx={BoxNavbar}>
+        <Menu
+          id="demo-positioned-menu"
+          aria-labelledby="demo-positioned-button"
+          anchorEl={settingsEl}
+          open={open}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          sx={NavbarMenu}
+        >
+          <Typography component="h2" ml={5}>
+            SETTINGS
+          </Typography>
+          <MenuList sx={NavbarMenuList}>
+            <Typography component="div" mt={1}>
+              News
+            </Typography>
+            <UiSwitch
+              active={newsOpen}
+              setBoolean={setNewsOpen}
+              todoNow={undefined}
+              setTodo={undefined}
+              keyId={undefined}
+            />
+          </MenuList>
+          <MenuList sx={NavbarMenuList}>
+            <Typography component="div" mt={1}>
+              Old ToDo
+            </Typography>
+            <UiSwitch
+              active={oldTodoOpen}
+              setBoolean={setOldTodoOpen}
+              todoNow={undefined}
+              setTodo={undefined}
+              keyId={undefined}
+            />
+          </MenuList>
+        </Menu>
+      </Box>
+    </>
   );
 };
 export default Navbar;

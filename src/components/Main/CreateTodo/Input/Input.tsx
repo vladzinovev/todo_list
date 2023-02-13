@@ -1,14 +1,16 @@
 import { IInput } from "@/types/types";
+import Typography from "@mui/material/Typography";
+import { TypographyError } from "../CreateTodoStyle";
 import styles from "./Input.module.scss";
 
 const Input = ({ idLabel, type, title }: IInput) => {
   return (
-    <div className={styles.input}>
+    <>
       {title?.isDirty && title.minLengthError && (
-        <div className={styles.error}>Мало букв</div>
+        <Typography sx={TypographyError}>Мало букв</Typography>
       )}
       {title?.isDirty && title.maxLengthError && (
-        <div className={styles.error}>Длинный текст</div>
+        <Typography sx={TypographyError}>Длинный текст</Typography>
       )}
       <input
         className={`${styles.input} ${title?.isEmpty ? styles.invalid : null}`}
@@ -21,7 +23,7 @@ const Input = ({ idLabel, type, title }: IInput) => {
         id={idLabel}
         required
       />
-    </div>
+    </>
   );
 };
 export default Input;

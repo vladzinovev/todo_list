@@ -1,5 +1,22 @@
 import { Dispatch, SetStateAction } from "react";
 
+export interface IStoreContext {
+  newsOpen: boolean;
+  setNewsOpen: Dispatch<SetStateAction<boolean>>;
+  oldTodoOpen: boolean;
+  setOldTodoOpen: Dispatch<SetStateAction<boolean>>;
+  setChecked: Dispatch<SetStateAction<boolean>>;
+  checked: boolean;
+  todayTodo: ITodo[];
+  setTodayTodo: Dispatch<SetStateAction<ITodo[]>>;
+  oldTodo: ITodo[];
+  setOldTodo: Dispatch<SetStateAction<ITodo[]>>;
+  newTodo: ITodo[];
+  setNewTodo: Dispatch<SetStateAction<ITodo[]>>;
+  id: number;
+  setId: Dispatch<SetStateAction<number>>;
+}
+
 export interface ITodo {
   id: number;
   open: boolean;

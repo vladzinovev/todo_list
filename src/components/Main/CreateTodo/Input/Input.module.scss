@@ -1,33 +1,17 @@
 .input {
-  .label_input {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 9px;
-    line-height: 9px;
-    display: block;
-  }
-  .error {
-    color: rgba(255, 0, 0, 0.678);
-    font-size: 10px;
-    margin-left: 22px;
-    margin-bottom: 5px;
-    font-family: Abhaya Libre SemiBold, sans-serif;
-  }
-  .input {
-    font-family: Abhaya Libre SemiBold, sans-serif;
-    margin-left: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 300px;
-    height: 40px;
-    background: rgba(207, 203, 203, 0.15);
-    border-radius: 15px;
-    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
-      -8px -8px 20px rgba(255, 255, 255, 0.05);
-    color: white;
-    border-style: none;
-  }
-  .invalid {
-    border: 1px solid rgba(255, 0, 0, 0.514);
-  }
+  font-family: Abhaya Libre SemiBold, sans-serif;
+  margin-left: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 40px;
+  background: rgba(207, 203, 203, 0.15);
+  border-radius: 15px;
+  box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
+    -8px -8px 20px rgba(255, 255, 255, 0.05);
+  color: white;
+  border-style: none;
+}
+.invalid {
+  border: 1px solid rgba(255, 0, 0, 0.514);
 }

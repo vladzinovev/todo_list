@@ -30,8 +30,8 @@
       }
     }
   }
-  .items_wrap:before,
-  .items_wrap:after {
+  &:before,
+  &:after {
     content: "";
     height: 100%;
     top: 0;
@@ -40,15 +40,15 @@
     z-index: 1;
     pointer-events: none;
   }
-  .items_wrap:before {
+  &:before {
     left: 0;
     background: linear-gradient(90deg, #282828 0%, rgba(255, 255, 255, 0) 100%);
   }
-  .items_wrap:after {
+  &:after {
     right: 0;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #282828 100%);
   }
-  .items_wrap:hover {
+  &:hover {
     .items {
       animation-play-state: paused;
     }

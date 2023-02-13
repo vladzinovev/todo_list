@@ -1,20 +1,18 @@
-import Image from "next/image";
 import { useContext } from "react";
 
-import True from "../../assets/svg/True.svg";
+import CheckIcon from "@mui/icons-material/Check";
 import { StoreContext } from "@/store/store";
-import styles from "./UiCheck.module.scss";
+import { Box, Button } from "@mui/material";
+import { BoxCheck, BoxImage } from "./UiCheckStyle";
 
 const UiCheck = () => {
   const { checked, setChecked } = useContext(StoreContext);
   return (
-    <div className={styles.check} onClick={() => setChecked((prev) => !prev)}>
-      <div className={styles.square}>
-        {checked ? (
-          <Image className={styles.image} src={True} alt="Check" />
-        ) : null}
-      </div>
-    </div>
+    <Box sx={BoxCheck} onClick={() => setChecked((prev) => !prev)}>
+      {checked ? (
+        <Button startIcon={<CheckIcon />} sx={BoxImage}></Button>
+      ) : null}
+    </Box>
   );
 };
 export default UiCheck;

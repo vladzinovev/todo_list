@@ -1,14 +1,17 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 
-import { useInput } from "@/hook/useInput";
+import { useInput } from "@/hooks/useInput";
 import { StoreContext } from "@/store/store";
 import { ITodo } from "@/types/types";
 import { calculateDate } from "@/utils/calculateDate";
-import Input from "./Input/Input";
+import TextField from "./Input/Input";
 import styles from "./CreateTodo.module.scss";
+import { Box } from "@mui/material";
+import { BoxCreate, CardBoxColor, FormBtn } from "./CreateTodoStyle";
+import Button from "@mui/material/Button";
 
 const CreateTodo = () => {
-  const { settingsOpen, setTodayTodo, setOldTodo, setNewTodo, id, setId } =
+  const { setTodayTodo, setOldTodo, setNewTodo, id, setId } =
     useContext(StoreContext);
   const date = useInput("", { isEmpty: true });
   const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 18 });
@@ -17,7 +20,7 @@ const CreateTodo = () => {
   const [selected, setSelceted] = useState("important");
   const [data, setData] = useState<ITodo>();
 
-  function handleSubmit(e:FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setData({
       id: id,
@@ -38,23 +41,24 @@ const CreateTodo = () => {
   }, [data]);
 
   return (
-    <div className={`${styles.create} ${settingsOpen && styles.no_click}`}>
+    <Box sx={BoxCreate}>
       <form
         className={styles.form}
         onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
       >
-        <div
-          className={`${styles.color} ${
+        <Box
+          sx={CardBoxColor}
+          className={`${
             selected == "important"
               ? styles.important
               : selected == "middle"
               ? styles.middle
               : styles.lite
           } `}
-        ></div>
-        <Input idLabel="date" title={date} type="date" />
-        <Input idLabel="title" title={title} type="text" />
-        <Input idLabel="descr" title={descr} type="text" />
+        ></Box>
+        <TextField idLabel="date" title={date} type="date" />
+        <TextField idLabel="title" title={title} type="text" />
+        <TextField idLabel="descr" title={descr} type="text" />
         <select
           onChange={(e) => setSelceted(e.target.value)}
           className={styles.select}
@@ -72,7 +76,8 @@ const CreateTodo = () => {
           </option>
         </select>
 
-        <button
+        <Button
+          sx={FormBtn}
           className={`${styles.btn} ${
             !date.inputValid || !title.inputValid || !descr.inputValid
               ? styles.disabled
@@ -87,9 +92,9 @@ const CreateTodo = () => {
           }
         >
           Save
-        </button>
+        </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 export default CreateTodo;

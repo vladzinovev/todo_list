@@ -5,6 +5,7 @@ import { StoreContext } from "@/store/store";
 import styles from "./Footer.module.scss";
 import { INews } from "@/types/types";
 import { API_URL } from "@/services/news.service";
+import { Box, Typography } from "@mui/material";
 
 
 const req = new Request(API_URL);
@@ -18,18 +19,18 @@ const Footer = () => {
   return (
     <>
       {newsOpen && (
-        <div className={styles.wrap}>
-          <div className={styles.items_wrap}>
-            <div className={styles.items}>
-              {isLoading && <p className={styles.status}>...Loading</p>}
-              {error && <p className={styles.status}>{error?.message}</p>}
+        <Box className={styles.wrap}>
+          <Box className={styles.items_wrap}>
+            <Box className={styles.items}>
+              {isLoading && <Typography className={styles.status}>...Loading</Typography>}
+              {error && <Typography className={styles.status}>{error?.message}</Typography>}
               {data?.articles?.map(
                 (article: { content: string }) =>
                   article.content + " |----> Next news: "
               )}
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Box>
+        </Box>
       )}
     </>
   );

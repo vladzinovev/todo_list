@@ -1,4 +1,4 @@
-import { ITodo } from "@/types/types";
+import { IStoreContext, ITodo } from "@/types/types";
 import {
   createContext,
   Dispatch,
@@ -8,36 +8,11 @@ import {
   useState,
 } from "react";
 
-interface IStoreContext {
-  newsOpen: boolean;
-  setNewsOpen: Dispatch<SetStateAction<boolean>>;
-  oldTodoOpen: boolean;
-  setOldTodoOpen: Dispatch<SetStateAction<boolean>>;
-  settingsOpen: boolean;
-  setSettingsOpen: Dispatch<SetStateAction<boolean>>;
-  createTodoOpen: boolean;
-  setChecked: Dispatch<SetStateAction<boolean>>;
-  checked: boolean;
-  setCreateTodoOpen: Dispatch<SetStateAction<boolean>>;
-  todayTodo: ITodo[];
-  setTodayTodo: Dispatch<SetStateAction<ITodo[]>>;
-  oldTodo: ITodo[];
-  setOldTodo: Dispatch<SetStateAction<ITodo[]>>;
-  newTodo: ITodo[];
-  setNewTodo: Dispatch<SetStateAction<ITodo[]>>;
-  id: number;
-  setId: Dispatch<SetStateAction<number>>;
-}
-
 export const StoreContext = createContext<IStoreContext>({
   newsOpen: true,
   setNewsOpen: () => {},
   oldTodoOpen: false,
   setOldTodoOpen: () => {},
-  settingsOpen: false,
-  setSettingsOpen: () => {},
-  createTodoOpen: false,
-  setCreateTodoOpen: () => {},
   checked: false,
   setChecked: () => {},
   todayTodo: [],
@@ -53,8 +28,7 @@ export const StoreContext = createContext<IStoreContext>({
 const StoreComponent = ({ children }: { children: ReactNode }) => {
   const [newsOpen, setNewsOpen] = useState(true);
   const [oldTodoOpen, setOldTodoOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  const [createTodoOpen, setCreateTodoOpen] = useState(false);
+  
   const [checked, setChecked] = useState(false);
   const [todayTodo, setTodayTodo] = useState<ITodo[]>([]);
   const [oldTodo, setOldTodo] = useState<ITodo[]>([]);
@@ -83,10 +57,6 @@ const StoreComponent = ({ children }: { children: ReactNode }) => {
         setNewsOpen,
         oldTodoOpen,
         setOldTodoOpen,
-        settingsOpen,
-        setSettingsOpen,
-        createTodoOpen,
-        setCreateTodoOpen,
         checked,
         setChecked,
         todayTodo,

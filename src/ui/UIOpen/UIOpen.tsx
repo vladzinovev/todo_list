@@ -4,7 +4,7 @@ import Image from "next/image";
 import arrow from "../../assets/svg/Arrow.svg";
 import arrowUp from "../../assets/svg/ArrowUp.svg";
 import { IUiOpen } from "@/types/types";
-import styles from "./UiOpen.module.scss";
+import { Box } from "@mui/material";
 
 const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {
   const [checkeds, setCheckeds] = useState(td.open);
@@ -25,15 +25,12 @@ const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {
     setCheckeds(td.open);
   }, [todoDay]);
   return (
-    <div className={styles.open} onClick={toggle}>
-      <div className={styles.circle}>
-        <Image
-          className={styles.image}
-          src={checkeds ? arrowUp : arrow}
-          alt="Arrow"
-        />
-      </div>
-    </div>
+    <Box mt="3px" sx={{cursor:'pointer'}} onClick={toggle}>
+      <Image
+        src={checkeds ? arrowUp : arrow}
+        alt="Arrow"
+      />
+    </Box>
   );
 };
 export default UiOpen;

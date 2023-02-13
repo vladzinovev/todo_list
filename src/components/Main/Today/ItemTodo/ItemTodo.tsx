@@ -3,30 +3,40 @@ import { FC } from "react";
 import { IItemTodo } from "@/types/types";
 import UiSwitch from "@/ui/UiSwitch/UiSwitch";
 import styles from "./ItemTodo.module.scss";
+import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  CardBoxColor,
+  CardItem,
+  CardItemContent,
+  CardTypography,
+  CardTypographyDescr,
+} from "./ItemTodoStyle";
 
 const ItemTodo: FC<IItemTodo> = ({ todo, key, todoNow, setTodo }) => {
   return (
-    <div className={styles.item} key={key}>
-      <div
-        className={`${styles.color} ${
+    <Card key={key} sx={CardItem}>
+      <Box
+        sx={CardBoxColor}
+        className={`${
           todo?.selected == "important"
             ? styles.important
             : todo?.selected == "middle"
             ? styles.middle
             : styles.lite
         } `}
-      ></div>
-      <div className={styles.main}>
-        <p
-          className={`${styles.title} ${
-            todo?.switched ? styles.decoration : null
-          }`}
+      ></Box>
+      <CardContent sx={CardItemContent}>
+        <Typography
+          sx={CardTypography}
+          className={`${todo?.switched && styles.decoration}`}
         >
           {todo?.title}
-        </p>
-        <p className={styles.descr}>{todo?.descr}</p>
-      </div>
-      <div className={styles.switch}>
+        </Typography>
+        <Typography className={styles.descr} sx={CardTypographyDescr}>
+          {todo?.descr}
+        </Typography>
+      </CardContent>
+      <Box  mt='20px' width='100px' >
         <UiSwitch
           active={todo.switched}
           setBoolean={undefined}
@@ -34,8 +44,8 @@ const ItemTodo: FC<IItemTodo> = ({ todo, key, todoNow, setTodo }) => {
           setTodo={setTodo}
           keyId={todo.id}
         />
-      </div>
-    </div>
+      </Box>
+    </Card>
   );
 };
 export default ItemTodo;

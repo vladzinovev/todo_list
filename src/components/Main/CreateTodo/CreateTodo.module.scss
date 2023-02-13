@@ -1,67 +1,40 @@
-.create {
-  margin-top: 15px;
-  width: 350px;
-  background: #282828;
-  box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
-    -8px -8px 20px rgba(255, 255, 255, 0.05);
-  border-radius: 40px;
-  .form {
-    padding: 15px;
-    position: relative;
-    .color {
-      position: absolute;
-      width: 5px;
-      height: 190px;
-      border-radius: 3px;
-      background: #ff0000;
-    }
-    .important {
-      background: #ff0000;
-    }
-    .middle {
-      background: #366eff;
-    }
-    .lite {
-      background: #ffeb33;
-    }
-    .select {
+.form {
+  padding: 15px;
+  position: relative;
+  .important {
+    background: #ff0000;
+  }
+  .middle {
+    background: #366eff;
+  }
+  .lite {
+    background: #ffeb33;
+  }
+  .select {
+    font-family: Abhaya Libre SemiBold, sans-serif;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 40px;
+    background: rgba(207, 203, 203, 0.15);
+    border-radius: 15px;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
+      -8px -8px 20px rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-style: none;
+    .option {
+      color: black;
       font-family: Abhaya Libre SemiBold, sans-serif;
-      margin-left: 20px;
-      padding: 10px;
-      margin-bottom: 10px;
-      width: 300px;
-      height: 40px;
-      background: rgba(207, 203, 203, 0.15);
-      border-radius: 15px;
-      box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
-        -8px -8px 20px rgba(255, 255, 255, 0.05);
-      color: #ffffff;
-      border-style: none;
-      .option {
-        color: black;
-        font-family: Abhaya Libre SemiBold, sans-serif;
-      }
-    }
-    .btn {
-      cursor: pointer;
-      margin: 0 auto;
-      display: block;
-      width: 100px;
-      height: 30px;
-      border-radius: 10px;
-      border-style: none;
-      font-family: Abhaya Libre SemiBold, sans-serif;
-    }
-    .enabled {
-      background: #10c200;
-      color: #ffffff;
-    }
-    .disabled {
-      background: #366eff;
-      color: #ffffff;
     }
   }
-}
-.no_click {
-  pointer-events: none;
+
+  .enabled {
+    background: #10c200;
+    color: #ffffff;
+  }
+  .disabled {
+    background: #366eff;
+    color: #ffffff;
+  }
 }

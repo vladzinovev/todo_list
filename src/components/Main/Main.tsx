@@ -8,11 +8,11 @@ import Days from "./Days/Days";
 import NoTodo from "./Today/NoTodo/NoTodo";
 import Footer from "./Footer/Footer";
 
-import styles from "./Main.module.scss";
+import { Box } from "@mui/material";
+import { BoxMain } from "./MainStyles";
 
 const Main = () => {
   const {
-    createTodoOpen,
     oldTodoOpen,
     oldTodo,
     newTodo,
@@ -21,10 +21,9 @@ const Main = () => {
   } = useContext(StoreContext);
 
   return (
-    <section className={styles.main}>
-      <div className={styles.container}>
+    <Box >
+      <Box sx={BoxMain}>
         <Navbar />
-        {createTodoOpen && <CreateTodo />}
         {oldTodoOpen ? (
           oldTodo.length ? (
             <Days todoDay={oldTodo} setTodoDay={setOldTodo} />
@@ -35,8 +34,8 @@ const Main = () => {
         <Today />
         <Days todoDay={newTodo} setTodoDay={setNewTodo} />
         <Footer />
-      </div>
-    </section>
+      </Box>
+    </Box>
   );
 };
 export default Main;

@@ -4,21 +4,21 @@ import { StoreContext } from "@/store/store";
 import UiCheck from "../../../ui/UiCheck/UiCheck";
 import ItemTodo from "./ItemTodo/ItemTodo";
 import NoTodo from "./NoTodo/NoTodo";
-import styles from "./Today.module.scss";
+import { Box, Typography } from "@mui/material";
+import { BoxItem, BoxToday, TodayTypography } from "./TodayStyle";
 
 const Today = () => {
-  const { checked, todayTodo, settingsOpen, setTodayTodo } =
-    useContext(StoreContext);
+  const { checked, todayTodo, setTodayTodo } = useContext(StoreContext);
 
   return (
-    <div className={`${styles.today} ${settingsOpen && styles.no_click}`}>
-      <div className={styles.heading}>
+    <>
+      <Box sx={BoxToday}>
         <UiCheck />
-        <p className={styles.title}>Today Tasks:</p>
-      </div>
+        <Typography sx={TodayTypography}>Today Tasks:</Typography>
+      </Box>
       {checked ? (
         todayTodo.length ? (
-          <div className={styles.description}>
+          <Box mt='12px' sx={BoxItem}>
             {todayTodo.map((todo) => (
               <ItemTodo
                 todo={todo}
@@ -27,12 +27,12 @@ const Today = () => {
                 setTodo={setTodayTodo}
               />
             ))}
-          </div>
+          </Box>
         ) : (
           <NoTodo text="There are no tasks today" />
         )
       ) : null}
-    </div>
+    </>
   );
 };
 export default Today;
