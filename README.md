@@ -1,38 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Roox test
 
-## Getting Started
+**Demo project:** [roox_test](https://vladzinovev.github.io/roox_test/).
 
-First, run the development server:
+## Краткое описание
+У нас есть 10 пользователей, которые получаем через axios запрос. Их мы можем сортировать, искать и редактировать. Так же реализована страница со входом для доступа к пользователям. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+**[Основная страница]** - первое, что видит пользователь. Это вход в приложение. 
+
+![LANDING](docs/1.PNG)
+
+Я реализовал вход по email: test@mail.ru, password: 1234. 
+
+## Страница с пользователями
+
+![LANDING](docs/2.PNG)
+
+После авторизации мы попадаем в нашу импровизированную БД (но также после изменения профиля, есть вывод в консоль в json формате). На данной странице можно перейти в любой профиль пользователя для редактирования, а также отсортировать пользователей по городу и по названию компании, оба этих параметра сортируются, как по возрастанию, так и по убыванию (по умолчанию я реализовал сортировку по ФИО). 
+
+## Поиск
+
+![LANDING](docs/4.PNG)
+
+Также был добавлен поиск по ФИО, после ввода в имени в поиск, отображаются найденные пользователи и их количество, этих же пользователей мы можем отсортировать по городу и по компании. После того как удаляем данные из поисковика, отображается исходное количество пользователей.
+
+## Страница редактирования
+
+![LANDING](docs/3.PNG)
+
+На странице редактирования мы можем изменить предоставленные нам поля, но только после нажатия кнопки "редактировать", кнопка отправить не доступна. Как только нажали редактировать, получаем доступ к изменению полей, на каждое поле добавлена валидация на пустоту, длину символов и корректность ввода (исходя из данных https://jsonplaceholder.typicode.com/users). Если какое-то поле не правильно заполнено, то кнопка "отправить" не будет срабатывать для отправки данных. После того как все правильно ввели, нажимаем "отправить", данные формируются в json и выводятся в консоль, помимо этого я реализовал сохранение измененного пользователя в массив. Для того чтобы посмотреть на наши изменения, нажимаем на кнопку "назад", после этого можем потом снова вернуться к этому пользователю и изменения останутся прежними.
+
+
+[Запрос через axios](https://jsonplaceholder.typicode.com/users) <br>
+[Тестовое задание](https://roox.notion.site/frontend-32b79baef66c4ca4a27f6f76e01a7dd2)
+
+## Стек технологий
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+React
+TypeScript
+Axios
+Scss
+Redux toolkit
+```
