@@ -5,8 +5,13 @@ import { Box, Typography } from "@mui/material";
 import { StoreContext } from "@/store/store";
 import styles from "./Footer.module.scss";
 import { INews } from "@/types/types";
-import { API_URL } from "@/services/news.service";
 
+export const API_URL =
+  "https://newsapi.org/v2/everything?" +
+  "q=tesla&" +
+  "from=2023-01-28&" +
+  "sortBy=publishedAt&" +
+  "apiKey=871c399c168b49c883daae36ba6aaa50";
 const req = new Request(API_URL);
 
 const Footer = () => {
