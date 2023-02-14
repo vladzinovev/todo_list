@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { Box, Typography } from "@mui/material";
 
+import UiCheck from "@/components/ui/UiCheck/UiCheck";
 import { BoxItem, BoxToday, TodayTypography } from "./TodayStyle";
 import { StoreContext } from "@/store/store";
-import UiCheck from "../../../ui/UiCheck/UiCheck";
 import ItemTodo from "./ItemTodo/ItemTodo";
-import NoTodo from "./NoTodo/NoTodo";
+import NoTodo from "../NoTodo/NoTodo";
 
 const Today = () => {
   const { checked, todayTodo, setTodayTodo } = useContext(StoreContext);

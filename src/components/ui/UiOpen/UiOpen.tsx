@@ -2,8 +2,8 @@ import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Box } from "@mui/material";
 
-import arrow from "../../assets/svg/Arrow.svg";
-import arrowUp from "../../assets/svg/ArrowUp.svg";
+import arrow from "../../../assets/svg/Arrow.svg";
+import arrowUp from "../../../assets/svg/ArrowUp.svg";
 import { IUiOpen } from "@/types/types";
 
 const UiOpen: FC<IUiOpen> = ({ td, todoDay, setTodoDay }) => {

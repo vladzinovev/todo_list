@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { Box } from "@mui/material";
 
 import { StoreContext } from "@/store/store";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import Today from "./Today/Today";
 import Days from "./Days/Days";
-import NoTodo from "./Today/NoTodo/NoTodo";
-import Footer from "./Footer/Footer";
+import NoTodo from "./NoTodo/NoTodo";
+import Footer from "../Footer/Footer";
 import { BoxMain } from "./MainStyles";
 
 const Main = () => {

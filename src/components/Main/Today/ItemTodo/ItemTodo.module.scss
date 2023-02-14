@@ -1,11 +1,13 @@
+@import "../../../../styles/variables";
+
 .important {
-  background: #ff0000;
+  background: $main-red;
 }
 .middle {
-  background: #366eff;
+  background: $main-blue;
 }
 .lite {
-  background: #ffeb33;
+  background: $main-yellow;
 }
 .decoration {
   text-decoration: line-through;

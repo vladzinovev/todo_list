@@ -54,9 +54,9 @@ export type IInput = {
 export type ISwitch = {
   active: boolean;
   setBoolean?: Dispatch<SetStateAction<boolean>>;
-  todoNow: ITodo[] | undefined;
+  todoNow?: ITodo[];
   setTodo?: Dispatch<SetStateAction<ITodo[]>>;
-  keyId: number | undefined;
+  keyId?: number;
 };
 export type IItemTodo = {
   todo: ITodo;

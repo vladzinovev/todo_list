@@ -4,9 +4,9 @@ import { Box, CardContent, Typography } from "@mui/material";
 
 import ItemTodo from "@/components/Main/Today/ItemTodo/ItemTodo";
 import { converterDate } from "@/utils/converterDate";
-import UiOpen from "@/ui/UIOpen/UIOpen";
 import { IItem } from "@/types/types";
 import { BoxItem } from "../../Today/TodayStyle";
+import UiOpen from "@/components/ui/UiOpen/UiOpen";
 import {
   CardBoxColor,
   CardContentMain,

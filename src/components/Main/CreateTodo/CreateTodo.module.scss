@@ -1,14 +1,15 @@
+@import "../../../styles/variables";
 .form {
   padding: 15px;
   position: relative;
   .important {
-    background: #ff0000;
+    background: $main-red;
   }
   .middle {
-    background: #366eff;
+    background: $main-blue;
   }
   .lite {
-    background: #ffeb33;
+    background: $main-yellow;
   }
   .select {
     font-family: Abhaya Libre SemiBold, sans-serif;
@@ -17,23 +18,22 @@
     margin-bottom: 10px;
     width: 300px;
     height: 40px;
-    background: rgba(207, 203, 203, 0.15);
+    background: $background;
     border-radius: 15px;
-    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15),
-      -8px -8px 20px rgba(255, 255, 255, 0.05);
-    color: #ffffff;
+    box-shadow: $box-shadow;
+    color: $white-color;
     border-style: none;
     .option {
-      color: black;
+      color: $black-color;
       font-family: Abhaya Libre SemiBold, sans-serif;
     }
   }
   .enabled {
-    background: #10c200;
-    color: #ffffff;
+    background: $main-green;
+    color: $white-color;
   }
   .disabled {
-    background: #366eff;
-    color: #ffffff;
+    background: $main-blue;
+    color: $white-color;
   }
 }

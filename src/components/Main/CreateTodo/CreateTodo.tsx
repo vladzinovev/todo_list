@@ -1,6 +1,7 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
+import cx from "classnames";
 
 import { useInput } from "@/hooks/useInput";
 import { StoreContext } from "@/store/store";
@@ -15,7 +16,7 @@ const CreateTodo = () => {
     useContext(StoreContext);
 
   const date = useInput("", { isEmpty: true });
-  const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 18 });
+  const title = useInput("", { isEmpty: true, minLength: 2, maxLength: 10 });
   const descr = useInput("", { isEmpty: true, minLength: 2, maxLength: 50 });
 
   const [selected, setSelceted] = useState("important");
@@ -50,13 +51,11 @@ const CreateTodo = () => {
       >
         <Box
           sx={CardBoxColor}
-          className={`${
-            selected == "important"
-              ? styles.important
-              : selected == "middle"
-              ? styles.middle
-              : styles.lite
-          } `}
+          className={cx({
+            [styles.important]: selected == "important",
+            [styles.middle]: selected == "middle",
+            [styles.lite]: selected == "lite",
+          })}
         ></Box>
         <TextField idLabel="date" title={date} type="date" />
         <TextField idLabel="title" title={title} type="text" />
@@ -79,7 +78,7 @@ const CreateTodo = () => {
         </select>
         <Button
           sx={FormBtn}
-          className={`${styles.btn} ${
+          className={`${
             !date.inputValid || !title.inputValid || !descr.inputValid
               ? styles.disabled
               : styles.enabled

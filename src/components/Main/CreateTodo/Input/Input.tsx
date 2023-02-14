@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+import cx from 'classnames';
 
 import { IInput } from "@/types/types";
 import { TypographyError } from "../CreateTodoStyle";
@@ -15,7 +16,7 @@ const Input = ({ idLabel, type, title }: IInput) => {
         <Typography sx={TypographyError}>Длинный текст</Typography>
       )}
       <input
-        className={`${styles.input} ${title?.isEmpty ? styles.invalid : null}`}
+        className={cx(styles.input, {[styles.invalid] : title?.isEmpty})}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           title?.onChange(e)
         }

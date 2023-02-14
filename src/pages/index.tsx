@@ -4,7 +4,8 @@ import Main from "@/components/Main/Main";
 import Header from "@/components/Head/Head";
 import { BoxHeader } from "@/styles/indexStyle";
 
-export default function Home() {
+const Home=()=> {
+  
   return (
     <Box sx={BoxHeader}>
       <Header />
@@ -14,3 +15,4 @@ export default function Home() {
     </Box>
   );
 }
+export default Home;

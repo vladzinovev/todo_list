@@ -12,7 +12,6 @@ import {
   AccordionDetails,
 } from "@mui/material";
 
-import UiSwitch from "@/ui/UiSwitch/UiSwitch";
 import { StoreContext } from "@/store/store";
 import {
   BoxNavbar,
@@ -25,7 +24,8 @@ import {
   AccordionBox,
   AccordionDetailsBox,
 } from "./NavbarStyle";
-import CreateTodo from "../CreateTodo/CreateTodo";
+import CreateTodo from "../Main/CreateTodo/CreateTodo";
+import UiSwitch from "../ui/UiSwitch/UiSwitch";
 
 const Navbar = () => {
   const { newsOpen, setNewsOpen, oldTodoOpen, setOldTodoOpen } =

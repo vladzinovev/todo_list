@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 import { INoTodo } from "@/types/types";
 import { BoxItemTypography } from "./NoTodoStyle";
-import { BoxItem } from "../TodayStyle";
+import { BoxItem } from "../Today/TodayStyle";
 
 const NoTodo: FC<INoTodo> = ({ text }) => {
   return (
