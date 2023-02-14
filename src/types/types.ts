@@ -81,8 +81,14 @@ export type Article = {
   publishedAt: Date;
   content: string;
 };
-export type INews = {
-  status: string;
-  totalResults: number;
-  articles: Article[];
-};
+export type INewsItemType ={
+  by: string;
+  descendants: number;
+  id: number;
+  kids?: [];
+  score: number;
+  time: number;
+  title?: string;
+  type: string;
+  url: string;
+}
