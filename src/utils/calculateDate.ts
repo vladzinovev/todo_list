@@ -8,7 +8,7 @@ export function calculateDate(
   setOldTodo: Dispatch<SetStateAction<ITodo[]>>,
   setTodayTodo: Dispatch<SetStateAction<ITodo[]>>,
   setNewTodo: Dispatch<SetStateAction<ITodo[]>>,
-  data: ITodo | undefined
+  data?: ITodo
 ) {
   const newdate = replaceDate(new Date(Date.now()));
   if (data) {

@@ -42,7 +42,6 @@ const ItemTodo: FC<IItemTodo> = ({ todo, key, todoNow, setTodo }) => {
       <Box mt="20px" width="100px">
         <UiSwitch
           active={todo.switched}
-          setBoolean={undefined}
           todoNow={todoNow}
           setTodo={setTodo}
           keyId={todo.id}

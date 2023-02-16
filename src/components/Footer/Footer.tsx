@@ -16,6 +16,7 @@ const Footer = () => {
   const [posts, setPosts] = useState<INewsItemType[]>([]);
   const [errorTwo, setErrorTwo] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  
   const { isLoading, error, data } = useQuery<INewsItemType[], Error>(
     "repoData",
     () =>

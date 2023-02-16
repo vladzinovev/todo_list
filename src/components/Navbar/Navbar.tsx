@@ -101,9 +101,6 @@ const Navbar = () => {
             <UiSwitch
               active={newsOpen}
               setBoolean={setNewsOpen}
-              todoNow={undefined}
-              setTodo={undefined}
-              keyId={undefined}
             />
           </MenuList>
           <MenuList sx={NavbarMenuList}>
@@ -113,9 +110,6 @@ const Navbar = () => {
             <UiSwitch
               active={oldTodoOpen}
               setBoolean={setOldTodoOpen}
-              todoNow={undefined}
-              setTodo={undefined}
-              keyId={undefined}
             />
           </MenuList>
         </Menu>
