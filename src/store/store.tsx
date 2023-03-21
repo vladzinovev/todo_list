@@ -11,7 +11,7 @@ import { IStoreContext, ITodo } from "@/types/types";
 export const StoreContext = createContext<IStoreContext>({
   newsOpen: true,
   setNewsOpen: () => {},
-  oldTodoOpen: false,
+  oldTodoOpen: true,
   setOldTodoOpen: () => {},
   checked: false,
   setChecked: () => {},
@@ -27,7 +27,7 @@ export const StoreContext = createContext<IStoreContext>({
 
 const StoreComponent = ({ children }: { children: ReactNode }) => {
   const [newsOpen, setNewsOpen] = useState(true);
-  const [oldTodoOpen, setOldTodoOpen] = useState(false);
+  const [oldTodoOpen, setOldTodoOpen] = useState(true);
 
   const [checked, setChecked] = useState(false);
   const [todayTodo, setTodayTodo] = useState<ITodo[]>([]);
